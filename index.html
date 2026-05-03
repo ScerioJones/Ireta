@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ireta — Your Tribe. Your Stories. Your Lore.</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@700;900&display=swap');
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: #0A0710;
+      color: #E8E4DC;
+      overflow-x: hidden;
+    }
+
+    /* NAV */
+    nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid #1A1A28;
+    }
+    .nav-logo { display: flex; align-items: center; gap: 10px; }
+    .nav-logo-icon { width: 38px; height: 38px; background: #1A0E2E; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .nav-logo-name { font-size: 20px; font-weight: 700; color: #F0EDE8; }
+    .nav-link { font-size: 14px; color: #888; text-decoration: none; }
+    .nav-link:hover { color: #E8971F; }
+
+    /* HERO */
+    .hero {
+      text-align: center;
+      padding: 100px 24px 80px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .hero-eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #E8971F;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 8vw, 72px);
+      font-weight: 900;
+      line-height: 1.1;
+      color: #F0EDE8;
+      margin-bottom: 24px;
+    }
+    .hero-title span { color: #E8971F; }
+    .hero-sub {
+      font-size: 18px;
+      color: #888;
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #E8971F;
+      color: #0A0710;
+      font-size: 16px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .hero-cta:hover { opacity: 0.88; }
+    .hero-sub-note { font-size: 13px; color: #444; margin-top: 14px; }
+
+    /* FEATURES */
+    .features {
+      padding: 80px 24px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .features-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: #F0EDE8;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      background: #13131A;
+      border: 1px solid #1E1E28;
+      border-radius: 18px;
+      padding: 28px 24px;
+    }
+    .feature-icon { font-size: 32px; margin-bottom: 16px; }
+    .feature-title { font-size: 17px; font-weight: 700; color: #F0EDE8; margin-bottom: 8px; }
+    .feature-desc { font-size: 14px; color: #777; line-height: 1.65; }
+
+    /* TAGLINE SECTION */
+    .tagline-section {
+      background: #13131A;
+      border-top: 1px solid #1E1E28;
+      border-bottom: 1px solid #1E1E28;
+      padding: 80px 24px;
+      text-align: center;
+    }
+    .tagline-section h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 900;
+      color: #F0EDE8;
+      max-width: 680px;
+      margin: 0 auto 16px;
+      line-height: 1.25;
+    }
+    .tagline-section p {
+      font-size: 16px;
+      color: #666;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+
+    /* DOWNLOAD */
+    .download {
+      text-align: center;
+      padding: 100px 24px;
+    }
+    .download h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 40px;
+      font-weight: 900;
+      color: #F0EDE8;
+      margin-bottom: 16px;
+    }
+    .download p {
+      font-size: 16px;
+      color: #666;
+      margin-bottom: 36px;
+    }
+    .app-store-btn {
+      display: inline-block;
+      background: #F0EDE8;
+      color: #0A0710;
+      font-size: 15px;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+    }
+    .app-store-btn:hover { opacity: 0.88; }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #1A1A28;
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    footer p { font-size: 13px; color: #444; }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a { font-size: 13px; color: #555; text-decoration: none; }
+    .footer-links a:hover { color: #E8971F; }
+
+    @media (max-width: 600px) {
+      nav { padding: 16px 20px; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-icon">🫂</div>
+    <span class="nav-logo-name">Ireta</span>
+  </div>
+  <a class="nav-link" href="mailto:iretahelp@yahoo.com">Contact</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Now available on iOS</p>
+  <h1 class="hero-title">Your tribe deserves<br/><span>more than a group chat.</span></h1>
+  <p class="hero-sub">Ireta is a private space for the people who matter most. Keep your stories, celebrate each other, and build something that lasts longer than a thread.</p>
+  <a class="hero-cta" href="#">
+    ⬇ Download on the App Store
+  </a>
+  <p class="hero-sub-note">Free to download &nbsp;·&nbsp; iOS only &nbsp;·&nbsp; Invite-only tribes</p>
+</section>
+
+<!-- TAGLINE SECTION -->
+<div class="tagline-section">
+  <h2>"Write it down before you forget it."</h2>
+  <p>The night you all drove nowhere in particular. The trip that went wrong in the best way. The moments that deserve more than a caption.</p>
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+  <h2 class="features-title">Everything your tribe needs</h2>
+  <div class="features-grid">
+
+    <div class="feature-card">
+      <div class="feature-icon">📚</div>
+      <p class="feature-title">The Archives</p>
+      <p class="feature-desc">Your tribe's shared journal. Write pages, add photos, and keep the stories that are actually worth keeping.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🎭</div>
+      <p class="feature-title">The Peanut Gallery</p>
+      <p class="feature-desc">Every member gets a slide. Introduce yourself, rate your skills, and let the tribe weigh in with half-star precision.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🏙️</div>
+      <p class="feature-title">Town Square</p>
+      <p class="feature-desc">Post bulletins, run polls, plan meetups, and settle once and for all who the best cook in the group is.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🔒</div>
+      <p class="feature-title">Completely Private</p>
+      <p class="feature-desc">Invite-only tribes. No algorithm. No strangers. Your lore stays exactly where it belongs — with your people.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🍎</div>
+      <p class="feature-title">Sign in with Apple</p>
+      <p class="feature-desc">No passwords, no accounts to set up. Just your Apple ID and you're in. Simple as it should be.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">⚡</div>
+      <p class="feature-title">Real-time Sync</p>
+      <p class="feature-desc">Everyone sees it the moment it happens. Posts, pages, reactions — live across every device in your tribe.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="download">
+  <h2>Your tribe is waiting.</h2>
+  <p>Download Ireta free on the App Store and invite your people today.</p>
+  <a class="app-store-btn" href="#">Download on the App Store</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Ireta Development Team</p>
+  <div class="footer-links">
+    <a href="ireta_privacy.html">Privacy Policy</a>
+    <a href="ireta_support.html">Support</a>
+    <a href="mailto:iretahelp@yahoo.com">iretahelp@yahoo.com</a>
+  </div>
+</footer>
+
+</body>
+</html>
